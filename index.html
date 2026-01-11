@@ -9,20 +9,20 @@
 
 <form id="bukutamu">
   <input placeholder="Nama" required>
-  <input placeholder="Kelas" required>
+  <input placeholder="Asal Sekolah" required>
   <input placeholder="Pesan dan Kesan" required>
   <button>Kirim</button>
 </form>
 
 <script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbwj0y8z2y7Bn6oza7QSZ910KbvGPRBGsdpPGESE0BKcdiCjPptYwqVYClAYdEKOw2so/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbxCp3N0CEyuDJOBHihhoa800NR5pODwT9ZzQGvu7Y4NTLbxWP7aWg0fyCvrcVJxixXM/exec";
 
 document.getElementById("bukutamu").addEventListener("submit", e => {
   e.preventDefault();
 
   const data = {
     nama: e.target[0].value,
-    kelas: e.target[1].value,
+    asal: e.target[1].value,
     pesan: e.target[2].value
   };
 
