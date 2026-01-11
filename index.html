@@ -3,127 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <title>Buku Tamu</title>
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins&display=swap" rel="stylesheet">
-
   <style>
     body {
-      margin: 0;
-      min-height: 100vh;
-      background: #f6f2ea;
-      font-family: 'Poppins', sans-serif;
+      background: #f7f3ee;
+      font-family: Georgia, serif;
       display: flex;
       justify-content: center;
       align-items: center;
+      min-height: 100vh;
     }
-
-    .container {
-      background: #fbf8f3;
-      width: 90%;
-      max-width: 700px;
-      padding: 50px 40px;
+    .card {
+      background: #fffaf3;
+      padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      width: 360px;
       text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
-
     h1 {
-      font-family: 'Playfair Display', serif;
       letter-spacing: 4px;
-      color: #5a4a3f;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
-
-    .input-box {
-      background: #f3d9bd;
-      margin: 20px auto;
-      padding: 15px;
-      border-radius: 10px;
-      width: 80%;
-    }
-
-    .input-box input,
-    .input-box textarea {
+    input, textarea {
       width: 100%;
       border: none;
-      background: transparent;
-      outline: none;
-      font-size: 16px;
-      text-align: center;
-      color: #4b3b2f;
-      resize: none;
+      background: #f3d8bf;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      font-size: 14px;
     }
-
-    .input-box textarea {
+    textarea {
+      resize: none;
       height: 80px;
     }
-
     button {
-      margin-top: 30px;
-      padding: 12px 35px;
-      border: none;
-      border-radius: 30px;
-      background: #8b6b55;
+      background: #7a5c47;
       color: white;
-      font-size: 16px;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 10px;
       cursor: pointer;
-      transition: 0.3s;
     }
-
     button:hover {
-      background: #6f5443;
+      background: #5e4534;
     }
   </style>
 </head>
 
 <body>
+  <div class="card">
+    <h1>SELAMAT DATANG</h1>
 
-<div class="container">
-  <h1>SELAMAT DATANG</h1>
-
-  <form id="bukutamu">
-    <div class="input-box">
-      <input type="text" placeholder="Nama" required>
-    </div>
-
-    <div class="input-box">
-      <input type="text" placeholder="Asal Sekolah" required>
-    </div>
-
-    <div class="input-box">
-      <textarea placeholder="Pesan dan Kesan" required></textarea>
-    </div>
-
-    <button type="submit">Kirim</button>
-  </form>
-</div>
+    <form id="bukutamu">
+      <input type="text" name="nama" placeholder="Nama Lengkap" required>
+      <input type="text" name="sekolah" placeholder="Asal Sekolah" required>
+      <textarea name="pesan" placeholder="Pesan dan Kesan" required></textarea>
+      <button type="submit">Kirim</button>
+    </form>
+  </div>
 
 <script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbwLzwVDh4kiHVIDCFDnJa7eBmLuCnfC7-Ls__TcErhQ8Sd6fNns-n5CwKcAoCN7-bwi/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbwCfeELsHW-L-M_z8yV1YI3gLwrezB8-mG_6jJaJuQ6i_owV2A1paENEZ-EN9gd3mUv/exec";
 
 document.getElementById("bukutamu").addEventListener("submit", e => {
   e.preventDefault();
-
-  <form action="PASTE_URL_APPS_SCRIPT_DI_SINI" method="post">
-    <input type="text" name="nama" placeholder="Nama Lengkap" required>
-    <input type="text" name="asal" placeholder="Asal Sekolah" required>
-    <input type="text" name="pesan" placeholder="Pesan dan Kesan" required>
-  </form>
-</div>
-
-</body>
-</html>
-  
-  const data = {
-    NAMA: e.target[0].value,
-    AsalSekolah: e.target[1].value,
-    PesandanKesan: e.target[2].value
-  };
+  const formData = new FormData(e.target);
 
   fetch(scriptURL, {
     method: "POST",
-    body: JSON.stringify(data)
+    body: formData
   })
   .then(() => {
     alert("Terima kasih sudah mengisi buku tamu 😊");
@@ -135,4 +85,3 @@ document.getElementById("bukutamu").addEventListener("submit", e => {
 
 </body>
 </html>
-
