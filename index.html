@@ -100,11 +100,21 @@
 </div>
 
 <script>
-const scriptURL = "https://script.google.com/macros/s/AKfycby1S-qvvQQlSdaz0burKoQ7TxWonFyPO3hz3HWdo-I_Lkuz68qSm96SqIyuCka0uwE_/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbwLzwVDh4kiHVIDCFDnJa7eBmLuCnfC7-Ls__TcErhQ8Sd6fNns-n5CwKcAoCN7-bwi/exec";
 
 document.getElementById("bukutamu").addEventListener("submit", e => {
   e.preventDefault();
 
+  <form action="PASTE_URL_APPS_SCRIPT_DI_SINI" method="post">
+    <input type="text" name="nama" placeholder="Nama Lengkap" required>
+    <input type="text" name="asal" placeholder="Asal Sekolah" required>
+    <input type="text" name="pesan" placeholder="Pesan dan Kesan" required>
+  </form>
+</div>
+
+</body>
+</html>
+  
   const data = {
     NAMA: e.target[0].value,
     AsalSekolah: e.target[1].value,
