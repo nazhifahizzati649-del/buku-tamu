@@ -1,60 +1,96 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Buku Tamu</title>
-  <style>
-    body {
-      background: #f7f3ee;
-      font-family: Georgia, serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-    .card {
-      background: #fffaf3;
-      padding: 40px;
-      border-radius: 20px;
-      width: 360px;
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-    h1 {
-      letter-spacing: 4px;
-      margin-bottom: 30px;
-    }
-    input, textarea {
-      width: 100%;
-      border: none;
-      background: #f3d8bf;
-      padding: 12px;
-      margin-bottom: 15px;
-      border-radius: 10px;
-      font-size: 14px;
-    }
-    textarea {
-      resize: none;
-      height: 80px;
-    }
-    button {
-      background: #7a5c47;
-      color: white;
-      border: none;
-      padding: 12px;
-      width: 100%;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #5e4534;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Registrasi Club Informatika</title>
+
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0a1a2f, #102b4e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: rgba(10, 26, 47, 0.85);
+  border-radius: 20px;
+  padding: 35px;
+  width: 360px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 30px rgba(0, 183, 255, 0.3);
+  border: 1px solid rgba(0, 183, 255, 0.3);
+}
+
+.logo {
+  width: 90px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  margin: 10px 0;
+  letter-spacing: 4px;
+  font-size: 26px;
+}
+
+.sub {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-bottom: 25px;
+}
+
+input, textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(0,183,255,0.4);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 14px;
+  color: white;
+  font-size: 14px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #b5dfff;
+}
+
+textarea {
+  resize: none;
+  height: 90px;
+}
+
+button {
+  width: 100%;
+  background: linear-gradient(135deg, #00b7ff, #0077ff);
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+</style>
 </head>
 
 <body>
-  <div class="card">
-    <h1>SELAMAT DATANG</h1>
+
+<div class="container">
+
+  <!-- LOGO -->
+  <img src="logo.png" class="logo" alt="Logo Club">
+
+  <h1>SELAMAT DATANG</h1>
+  <div class="sub">AVEOS FAIR 2026<br>Club Informatika</div>
 
     <form id="bukutamu">
       <input type="text" name="nama" placeholder="Nama Lengkap" required>
