@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Buku Tamu</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #f6f2ea;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: #fbf8f3;
+      width: 90%;
+      max-width: 700px;
+      padding: 50px 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 4px;
+      color: #5a4a3f;
+      margin-bottom: 40px;
+    }
+
+    .input-box {
+      background: #f3d9bd;
+      margin: 20px auto;
+      padding: 15px;
+      border-radius: 10px;
+      width: 80%;
+    }
+
+    .input-box input,
+    .input-box textarea {
+      width: 100%;
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 16px;
+      text-align: center;
+      color: #4b3b2f;
+      resize: none;
+    }
+
+    .input-box textarea {
+      height: 80px;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 35px;
+      border: none;
+      border-radius: 30px;
+      background: #8b6b55;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #6f5443;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>SELAMAT DATANG</h1>
+
+  <form id="bukutamu">
+    <div class="input-box">
+      <input type="text" placeholder="Nama" required>
+    </div>
+
+    <div class="input-box">
+      <input type="text" placeholder="Asal Sekolah" required>
+    </div>
+
+    <div class="input-box">
+      <textarea placeholder="Pesan dan Kesan" required></textarea>
+    </div>
+
+    <button type="submit">Kirim</button>
+  </form>
+</div>
+
+<script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbxCp3N0CEyuDJOBHihhoa800NR5pODwT9ZzQGvu7Y4NTLbxWP7aWg0fyCvrcVJxixXM/exec";
+
+document.getElementById("bukutamu").addEventListener("submit", e => {
+  e.preventDefault();
+
+  const data = {
+    nama: e.target[0].value,
+    sekolah: e.target[1].value,
+    pesan: e.target[2].value
+  };
+
+  fetch(scriptURL, {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(() => {
+    alert("Terima kasih sudah mengisi buku tamu 😊");
+    e.target.reset();
+  })
+  .catch(() => alert("Gagal mengirim data"));
+});
+</script>
+
+</body>
+</html>
 
