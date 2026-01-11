@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Buku Tamu Sekolah</title>
+</head>
+<body>
+
+<h2>Buku Tamu Sekolah</h2>
+
+<form id="bukutamu">
+  <input placeholder="Nama" required>
+  <input placeholder="Kelas" required>
+  <input placeholder="Pesan dan Kesan" required>
+  <button>Kirim</button>
+</form>
+
+<script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbwj0y8z2y7Bn6oza7QSZ910KbvGPRBGsdpPGESE0BKcdiCjPptYwqVYClAYdEKOw2so/exec";
+
+document.getElementById("bukutamu").addEventListener("submit", e => {
+  e.preventDefault();
+
+  const data = {
+    nama: e.target[0].value,
+    kelas: e.target[1].value,
+    pesan: e.target[2].value
+  };
+
+  fetch(scriptURL, {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(() => alert("Data berhasil dikirim!"))
+  .catch(() => alert("Gagal mengirim data"));
+});
+</script>
+
+</body>
+</html>
