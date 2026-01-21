@@ -8,11 +8,6 @@
 </head>
 <body>
 
-  <!-- Karakter kiri -->
-  <img src="img/girl.png.jpeg" class="character left">
-
-  <!-- Karakter kanan -->
-  <img src="img/boy.png.jpeg" class="character right">
 
   <!-- Konten utama -->
   <div class="container">
@@ -104,23 +99,6 @@ h1 {
 .guest-form button:hover {
   transform: scale(1.03);
   box-shadow: 0 0 15px rgba(138,92,246,0.6);
-}
-
-/* Karakter */
-.character {
-  position: absolute;
-  bottom: 0;
-  width: 260px;
-  z-index: 1;
-  animation: float 4s ease-in-out infinite;
-}
-
-.character.left {
-  left: 40px;
-}
-
-.character.right {
-  right: 40px;
 }
 
 @keyframes float {
