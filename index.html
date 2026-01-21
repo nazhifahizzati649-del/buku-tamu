@@ -140,13 +140,8 @@ document.getElementById("bukutamu").addEventListener("submit", e => {
   fetch(scriptURL, {
     method: "POST",
     body: data
-  })
-  .then(() => {
-    alert("Terima kasih sudah mengisi buku tamu 🙌");
-    e.target.reset();
-  })
-  .catch(() => alert("Gagal mengirim data"));
-});
+  });
+
 </script>
 
 </body>
